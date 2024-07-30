@@ -1,0 +1,12 @@
+configstore/
+node_modules/
+raycast/
+simple-update-notifier/
+wireshark/
+cache/
+logs/
+temp/
+
+.DS_Store
+thumbs.db
+__pycache__/

@@ -1,0 +1,14 @@
+theme = rose-pine
+
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 24
+window-width = 100
+window-height = 100
+cursor-style = block
+cursor-style-blink = true
+background-blur-radius = 0
+window-padding-x = 0
+window-padding-y = 0,4
+mouse-hide-while-typing = true
+window-decoration = true
+background-opacity = 1

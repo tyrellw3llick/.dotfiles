@@ -1,0 +1,100 @@
+#!/bin/bash
+
+source "$CONFIG_DIR/colors.sh"
+
+# This is a demo config to showcase some of the most important commands.
+# It is meant to be changed and configured, as it is intentionally kept sparse.
+# For a (much) more advanced configuration example see my dotfiles:
+# https://github.com/FelixKratz/dotfiles
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+##### Bar Appearance #####
+# Configuring the general appearance of the bar.
+# These are only some of the options available. For all options see:
+# https://felixkratz.github.io/SketchyBar/config/bar
+# If you are looking for other colors, see the color picker:
+# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+
+sketchybar --bar position=top height=29 blur_radius=20 color=$BAR_COLOR
+
+##### Changing Defaults #####
+# We now change some default values, which are applied to all further items.
+# For a full list of all available item properties see:
+# https://felixkratz.github.io/SketchyBar/config/items
+
+default=(
+  padding_left=8
+  padding_right=8
+  background.corner_radius=6
+  background.height=26
+  background.color=$ITEM_BG_COLOR
+  icon.font="SF Pro:Semibold:15.0"
+  label.font="SF Pro:Semibold:15.0"
+  icon.color=$TEXT_COLOR
+  label.color=$TEXT_COLOR
+  icon.padding_left=6
+  icon.padding_right=6
+  label.padding_left=4
+  label.padding_right=8
+)
+sketchybar --default "${default[@]}"
+
+# --- Bar Side Items ---
+
+sketchybar --add item calendar right \
+           --set calendar icon=􀧞 update_freq=30 script="$PLUGIN_DIR/calendar.sh" \
+           --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change \
+           --add item battery right \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change \
+           --add item cpu right \
+           --set cpu update_freq=2 icon=􀧓 script="$PLUGIN_DIR/cpu.sh" \
+
+# --- Spaces Config ---
+SPACE_SIDS=(1 2 3 4 5 6 7 8 9 10)
+
+for sid in "${SPACE_SIDS[@]}"
+do
+  sketchybar --add space space.$sid left \
+             --set space.$sid space=$sid \
+                              icon=$sid \
+                              label.font="sketchybar-app-font:Regular:16.0" \
+                              label.padding_right=20 \
+                              script="$PLUGIN_DIR/space.sh"
+done
+
+# --- Space Separator config ---
+sketchybar --add item space_separator left                             \
+           --set space_separator icon="􀆊"                                \
+                                 icon.color=$ACCENT_COLOR \
+                                 icon.padding_left=4                   \
+                                 label.drawing=off                     \
+                                 background.drawing=off                \
+                                 script="$PLUGIN_DIR/space_windows.sh" \
+           --subscribe space_separator space_windows_change
+
+# --- front_app.sh config ---
+sketchybar --add item front_app left \
+           --set front_app       background.color=$ACCENT_COLOR \
+                                 icon.color=$BAR_COLOR \
+                                 icon.font="sketchybar-app-font:Regular:16.0" \
+                                 label.color=$BAR_COLOR \
+                                 script="$PLUGIN_DIR/front_app.sh"            \
+           --subscribe front_app front_app_switched
+
+sketchybar --add item media e \
+           --set media label.color=$ACCENT_COLOR \
+                       label.max_chars=30 \
+                       icon.padding_left=0 \
+                       scroll_texts=on \
+                       icon=􀑪             \
+                       icon.color=$ACCENT_COLOR   \
+                       background.drawing=off \
+                       script="$PLUGIN_DIR/media.sh" \
+           --subscribe media media_change
+
+##### Force all scripts to run the first time (never do this in a script) #####
+sketchybar --update
