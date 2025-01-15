@@ -11,4 +11,4 @@ window-padding-x = 0
 window-padding-y = 0,4
 mouse-hide-while-typing = true
 window-decoration = true
-background-opacity = 0.7
+background-opacity = 1

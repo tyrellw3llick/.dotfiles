@@ -132,6 +132,34 @@ return {
                                         }
                                 end,
 
+                                ["tailwindcss"] = function()
+                                        local lspconfig = require("lspconfig")
+                                        lspconfig.tailwindcss.setup {
+                                                capabilities = capabilities,
+                                                on_attach = lsp_attach,
+                                                settings = {
+                                                        tailwindCSS = {
+                                                                validate = true,
+                                                                lint = {
+                                                                        cssConflict = "warning",
+                                                                        invalidApply = "error",
+                                                                        invalidScreen = "error",
+                                                                        invalidVariant = "error",
+                                                                        invalidConfigPath = "error",
+                                                                        invalidTailwindDirective = "error",
+                                                                },
+                                                        },
+                                                },
+                                                filetypes = {
+                                                        "javascript",
+                                                        "javascriptreact",
+                                                        "typescript",
+                                                        "typescriptreact",
+                                                        "css",
+                                                },
+                                        }
+                                end,
+
                                 ["pyright"] = function()
                                         local lspconfig = require("lspconfig")
                                         lspconfig.pyright.setup {
@@ -197,4 +225,3 @@ return {
                 })
         end
 }
-
