@@ -11,7 +11,7 @@ function icon_map() {
   "VMware Fusion")
     icon_result=":vmware_fusion:"
     ;;
-  "Alacritty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "终端" | "WezTerm")
+  "Alacritty" | "Ghostty" | "Hyper" | "iTerm2" | "kitty" | "Terminal" | "终端" | "WezTerm")
     icon_result=":terminal:"
     ;;
   "Microsoft To Do" | "Things")
@@ -424,6 +424,9 @@ function icon_map() {
     ;;
   "WhatsApp")
     icon_result=":whats_app:"
+    ;;
+  "Tana")
+    icon_result=":Tana:"
     ;;
   *)
     icon_result=":default:"
