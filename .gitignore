@@ -8,7 +8,7 @@ logs/
 temp/
 solana/
 
-github-copilot/
+github-copilot/apps.json
 
 .DS_Store
 thumbs.db
