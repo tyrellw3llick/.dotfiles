@@ -1,5 +1,12 @@
 return {
   {
+    "folke/snacks.nvim",
+    ---@type snacks.Config
+    opts = {
+      explorer = { enabled = false },
+    },
+  },
+  {
     "stevearc/oil.nvim",
     opts = {
       default_file_explorer = true,
