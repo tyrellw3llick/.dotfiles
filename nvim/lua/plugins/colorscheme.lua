@@ -8,7 +8,7 @@ return {
       dark_variant = "main",
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
-      disable_background = false,
+      disable_background = true,
       disable_float_background = false,
     },
     config = function(_, opts)

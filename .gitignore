@@ -8,6 +8,8 @@ logs/
 temp/
 solana/
 
+github-copilot/
+
 .DS_Store
 thumbs.db
 __pycache__/

@@ -21,6 +21,7 @@ return {
     has_line_number = true,
     bg_theme = "grape",
     code_font_family = "CaskaydiaCove Nerd Font Mono",
+    watermark = "",
     watermark_font_family = "CaskaydiaCove Nerd Font Mono",
     min_width = 0,
     mac_window_scale_factor = 1.15,
