@@ -1,25 +1,18 @@
 return {
   {
-    "folke/snacks.nvim",
-    ---@type snacks.Config
-    opts = {
-      explorer = { enabled = false },
-    },
-  },
-  {
     "stevearc/oil.nvim",
     opts = {
       default_file_explorer = true,
     },
     keys = {
       {
-        "<leader>e",
+        "<leader>o",
         "<CMD>Oil<CR>",
-        desc = "Explorer oil (cwd)",
+        desc = "Explorer oil",
         remap = true,
       },
       {
-        "<leader>E",
+        "<leader>O",
         "<CMD>Oil .<CR>",
         desc = "Explorer oil (Root Dir)",
         remap = true,
