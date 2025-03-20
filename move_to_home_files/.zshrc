@@ -50,6 +50,7 @@ export PATH="$PATH:/Users/enrique/Library/Python/3.9/bin"
 export PATH="/opt/homebrew/bin/pandoc:$PATH"
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
+export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
@@ -85,5 +86,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases personalizados
 alias cat='bat'
-alias ls='lsd'
+alias ls='eza'
 alias urlpick='tmux capture-pane -J -p | grep -oE "(https?):\/\/.*[^>]" | sort --unique | fzf-tmux -d20 --multi --bind alt-a:select-all,alt-d:deselect-all | xargs open'
+. "/Users/enrique/.deno/env"
+# bun completions
+[ -s "/Users/enrique/.bun/_bun" ] && source "/Users/enrique/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
