@@ -52,6 +52,11 @@ export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 export PATH="$PATH:/Applications/Docker.app/Contents/Resources/bin/"
 export PATH="$PATH:/usr/local/go/bin:$HOME/go/bin"
 
+# Auto completoins
+fpath=(~/.zsh/completions $fpath)
+autoload -Uz compinit
+compinit
+
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
 
