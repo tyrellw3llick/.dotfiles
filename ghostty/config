@@ -1,7 +1,7 @@
 theme = rose-pine
 
 font-family = CaskaydiaCove Nerd Font Mono
-font-size = 24
+font-size = 23
 window-width = 100
 window-height = 100
 cursor-style = block
