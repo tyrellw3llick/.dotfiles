@@ -4,7 +4,7 @@ return {
 	priority = 1000,
 	config = function()
 		require("rose-pine").setup({
-			variant = "main",      -- auto, main, moon, or dawn
+			variant = "main", -- auto, main, moon, or dawn
 			dark_variant = "main", -- main, moon, or dawn
 
 			dim_inactive_windows = false,
@@ -53,6 +53,10 @@ return {
 				h6 = "foam",
 			},
 
+			highlight_groups = {
+				NormalFloat = { bg = "base" },
+				FloatBorder = { fg = "text", bg = "base" },
+			},
 		})
 		vim.cmd("colorscheme rose-pine") -- Apply the colorscheme
 	end,

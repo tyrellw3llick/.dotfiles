@@ -32,6 +32,7 @@ return {
 			"gomod",
 			"gowork",
 			"gosum",
+			"ninja",
 		},
 		incremental_selection = {
 			enable = true,
