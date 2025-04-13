@@ -23,19 +23,19 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
 -- Oil
-keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil at current dir"})
-keymap.set("n", "<leader>E", "<cmd>Oil .<CR>", { desc = "Open Oil at root dir"})
+keymap.set("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil at current dir" })
+keymap.set("n", "<leader>E", "<cmd>Oil .<CR>", { desc = "Open Oil at root dir" })
 
 -- Telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd"})
-keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files"})
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd"})
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd"})
-keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find todos"})
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Fuzzy find files in cwd" })
+keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<CR>", { desc = "Find string in cwd" })
+keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<CR>", { desc = "Find string under cursor in cwd" })
+keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find todos" })
 
 -- Auto-Session
-keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd"})
-keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto-session root dir"})
+keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
+keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto-session root dir" })
 
 -- TODO Comments
 keymap.set("n", "]t", function()
@@ -45,3 +45,7 @@ end, { desc = "Next todo comment" })
 keymap.set("n", "[t", function()
 	todo_comments.jump_prev()
 end, { desc = "Previous todo comment" })
+
+-- Better buffer navigation
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
