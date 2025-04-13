@@ -31,7 +31,7 @@ return {
 				"prismals",
 				-- Python
 				"pyright",
-			}
+			},
 		})
 
 		mason_tool_installer.setup({
@@ -44,8 +44,10 @@ return {
 				"delve",
 				-- Typescript
 				"biome",
+				"prettier",
 				-- Python
 				"pylint",
+				"black",
 				-- Lua
 				"stylua",
 			},
