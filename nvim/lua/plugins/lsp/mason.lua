@@ -31,6 +31,8 @@ return {
 				"prismals",
 				-- Python
 				"pyright",
+				-- Go
+				"gopls",
 			},
 		})
 
