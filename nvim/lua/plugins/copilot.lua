@@ -6,35 +6,15 @@ return {
 	},
 	cmd = "Copilot",
 	build = ":Copilot auth",
-	event = "BufReadPost",
-	opts = {
-		suggestion = {
-			enabled = not vim.g.ai_cmp,
-			auto_trigger = true,
-			hide_during_completion = vim.g.ai_cmp,
-			keymap = {
-				accept = false,
-				next = "<M-]>",
-				prev = "<M-[>",
-			},
-		},
-		panel = { enabled = false },
-		filetypes = {
-			markdown = true,
-			help = true,
-		},
-	},
+	event = "InsertEnter",
 	config = function()
-		if require("copilot.suggestion").is_visible() then
-			require("copilot.suggestion").accept()
-			return true
-		end
-
 		local copilot = require("copilot")
+		local copilot_cmp = require("copilot_cmp")
 
 		copilot.setup({
-			suggestion = { enabled = false },
+			suggestions = { enabled = false },
 			panel = { enabled = false },
 		})
+		copilot_cmp.setup()
 	end,
 }
