@@ -11,6 +11,7 @@ return {
 
 		notify.setup({
 			background_colour = "#26233a",
+			merge_duplicates = true,
 		})
 
 		noice.setup({
