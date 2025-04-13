@@ -29,6 +29,9 @@ return {
 			"vim",
 			"yaml",
 			"go",
+			"gomod",
+			"gowork",
+			"gosum",
 		},
 		incremental_selection = {
 			enable = true,
