@@ -46,6 +46,8 @@ return {
 				"biome",
 				-- Python
 				"pylint",
+				-- Lua
+				"stylua",
 			},
 		})
 	end,
