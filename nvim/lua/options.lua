@@ -27,3 +27,8 @@ opt.clipboard:append("unnamedplus")
 
 opt.splitright = true
 opt.splitbelow = true
+
+-- Undo persistance
+opt.undofile = true
+opt.undodir = vim.fn.stdpath("data") .. "/undo"
+vim.fn.mkdir(vim.o.undodir, "p")
