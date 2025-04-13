@@ -55,7 +55,7 @@ return {
 
 			highlight_groups = {
 				NormalFloat = { bg = "base" },
-				FloatBorder = { fg = "text", bg = "base" },
+				FloatBorder = { fg = "rose", bg = "base" },
 			},
 		})
 		vim.cmd("colorscheme rose-pine")
