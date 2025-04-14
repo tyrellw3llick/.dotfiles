@@ -33,6 +33,7 @@ return {
 			"gowork",
 			"gosum",
 			"ninja",
+			"rst",
 		},
 		incremental_selection = {
 			enable = true,
