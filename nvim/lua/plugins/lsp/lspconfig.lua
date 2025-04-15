@@ -144,6 +144,14 @@ return {
 					},
 				})
 			end,
+			["astro"] = function()
+				lspconfig["astro"].setup({
+					capabilities = capabilities,
+					settings = {
+						astro = {},
+					},
+				})
+			end,
 		})
 	end,
 }

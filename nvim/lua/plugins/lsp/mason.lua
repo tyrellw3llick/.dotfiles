@@ -21,6 +21,8 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = {
+				-- Frameworks
+				"astro",
 				-- Typescript
 				"ts_ls",
 				"html",
@@ -33,6 +35,8 @@ return {
 				"pyright",
 				-- Go
 				"gopls",
+				-- Miscellaneous
+				"marksman",
 			},
 		})
 
@@ -52,6 +56,9 @@ return {
 				"black",
 				-- Lua
 				"stylua",
+				-- Miscellaneous
+				"markdownlint-cli2",
+				"markdown-toc",
 			},
 		})
 	end,

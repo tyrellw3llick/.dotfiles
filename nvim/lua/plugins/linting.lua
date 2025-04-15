@@ -12,6 +12,7 @@ return {
 			css = { "biome" },
 			json = { "biome" },
 			python = { "pylint" },
+			markdown = { "markdownlint-cli2" },
 		}
 
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
