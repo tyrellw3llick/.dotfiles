@@ -13,11 +13,11 @@ return {
 				if status then
 					-- Map Copilot status to a display string and color
 					if status == "InProgress" then
-						return { icon = "", status = "pending", color = { fg = "#ff9e64" } } -- Orange for pending
+						return { icon = "", status = "Pending", color = { fg = "#ff9e64" } } -- Orange for pending
 					elseif status == "Warning" then
-						return { icon = "", status = "error", color = { fg = "#ff6161" } } -- Red for error
+						return { icon = "", status = "Error", color = { fg = "#ff6161" } } -- Red for error
 					elseif status == "Enabled" or status == "Normal" then
-						return { icon = "", status = "ok", color = { fg = "#eb6f92" } } -- Blue for ok
+						return { icon = "", status = "OK", color = { fg = "#eb6f92" } } -- Blue for ok
 					end
 				end
 			end

@@ -37,6 +37,8 @@ return {
 				"gopls",
 				-- Miscellaneous
 				"marksman",
+				"dockerls",
+				"docker_compose_language_service",
 			},
 		})
 
@@ -59,6 +61,7 @@ return {
 				-- Miscellaneous
 				"markdownlint-cli2",
 				"markdown-toc",
+				"hadolint",
 			},
 		})
 	end,

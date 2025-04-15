@@ -6,6 +6,9 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
+		if vim.o.filetype == "lazy" then
+			vim.cmd([[messages clear]])
+		end
 		local noice = require("noice")
 		local notify = require("notify")
 
@@ -21,6 +24,18 @@ return {
 					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 					["vim.lsp.util.stylize_markdown"] = true,
 					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+				},
+			},
+			messages = {
+				enabled = true,
+				view = "notify",
+				view_error = "notify",
+				view_warn = "notify",
+				filter = {
+					warning = {
+						{ pattern = "deprecated", block = true },
+						{ pattern = "client%", block = true },
+					},
 				},
 			},
 			-- you can enable a preset for easier configuration
