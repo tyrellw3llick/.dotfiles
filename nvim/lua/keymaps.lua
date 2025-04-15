@@ -52,3 +52,6 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Notifications
 keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss all notifications" })
+
+-- Render markdown
+keymap.set("n", "<leader>mr", "<cmd>RenderMarkdown toggle<CR>", { desc = "Render markdown" })
