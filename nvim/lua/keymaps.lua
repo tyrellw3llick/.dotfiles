@@ -37,15 +37,6 @@ keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find todos" })
 keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "Restore session for cwd" })
 keymap.set("n", "<leader>ws", "<cmd>SessionSave<CR>", { desc = "Save session for auto-session root dir" })
 
--- TODO Comments
-keymap.set("n", "]t", function()
-	todo_comments.jump_next()
-end, { desc = "Next todo comment" })
-
-keymap.set("n", "[t", function()
-	todo_comments.jump_prev()
-end, { desc = "Previous todo comment" })
-
 -- Better buffer navigation
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
