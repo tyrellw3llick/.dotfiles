@@ -5,23 +5,35 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status")
 
-		-- Custom Copilot status component
+		-- Custom Copilot status component (as before)
 		local function copilot_status()
-			-- Check if copilot is loaded and a client is attached to the current buffer
 			if package.loaded["copilot"] then
 				local status = require("copilot.api").status.data.status
 				if status then
-					-- Map Copilot status to a display string and color
 					if status == "InProgress" then
-						return { icon = "", status = "Pending", color = { fg = "#ff9e64" } } -- Orange for pending
+						return { icon = " ", status = "Pending", color = { fg = "#ff9e64" } }
 					elseif status == "Warning" then
-						return { icon = "", status = "Error", color = { fg = "#ff6161" } } -- Red for error
+						return { icon = " ", status = "Error", color = { fg = "#ff6161" } }
 					elseif status == "Enabled" or status == "Normal" then
-						return { icon = "", status = "OK", color = { fg = "#eb6f92" } } -- Blue for ok
+						return { icon = " ", status = "OK", color = { fg = "#eb6f92" } }
 					end
 				end
 			end
-			return nil -- Return nil if Copilot is not active
+			return nil
+		end
+
+		-- Custom macro recording status component
+		local function macro_status()
+			local recording = vim.fn.reg_recording()
+			if recording ~= "" then
+				return {
+					icon = "● ",
+					status = "Recording: @" .. recording,
+					color = { fg = "#191724", bg = "#ebbcba" },
+				} -- Example color and icon
+			else
+				return nil
+			end
 		end
 
 		lualine.setup({
@@ -42,14 +54,31 @@ return {
 							if copilot then
 								return copilot.icon .. " " .. copilot.status
 							end
-							return "" -- Empty string if no Copilot status
+							return ""
 						end,
 						cond = function()
-							return copilot_status() ~= nil -- Only show if Copilot is active
+							return copilot_status() ~= nil
 						end,
 						color = function()
 							local copilot = copilot_status()
-							return copilot and copilot.color or { fg = "#ffffff" } -- Default color if no status
+							return copilot and copilot.color or { fg = "#ffffff" }
+						end,
+					},
+					-- Add macro recording status component
+					{
+						function()
+							local macro = macro_status()
+							if macro then
+								return macro.icon .. " " .. macro.status
+							end
+							return ""
+						end,
+						cond = function()
+							return macro_status() ~= nil
+						end,
+						color = function()
+							local macro = macro_status()
+							return macro and macro.color or { fg = "#ffffff" }
 						end,
 					},
 					{ "encoding" },

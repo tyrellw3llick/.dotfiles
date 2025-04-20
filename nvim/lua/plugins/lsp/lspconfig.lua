@@ -152,6 +152,25 @@ return {
 					},
 				})
 			end,
+			["yamlls"] = function()
+				lspconfig["yamlls"].setup({
+					capabilities = capabilities,
+					settings = {
+						redhat = {
+							telemetry = { enabled = false },
+						},
+						yaml = {
+							keyOrdering = false,
+							format = { enable = true },
+							validate = true,
+							schemaStore = {
+								enable = true,
+								url = "https://www.schemastore.org/api/json/catalog.json",
+							},
+						},
+					},
+				})
+			end,
 		})
 	end,
 }
