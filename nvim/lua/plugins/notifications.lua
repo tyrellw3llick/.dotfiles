@@ -5,6 +5,32 @@ return {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	},
+	keys = {
+		{
+			"<c-f>",
+			function()
+				if not require("noice.lsp").scroll(4) then
+					return "<c-f>"
+				end
+			end,
+			silent = true,
+			expr = true,
+			desc = "Scroll Forward",
+			mode = { "i", "n", "s" },
+		},
+		{
+			"<c-k>",
+			function()
+				if not require("noice.lsp").scroll(-4) then
+					return "<c-k>"
+				end
+			end,
+			silent = true,
+			expr = true,
+			desc = "Scroll Backward",
+			mode = { "i", "n", "s" },
+		},
+	},
 	config = function()
 		if vim.o.filetype == "lazy" then
 			vim.cmd([[messages clear]])
