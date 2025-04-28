@@ -40,6 +40,8 @@ return {
 			"gosum",
 			"ninja",
 			"rst",
+			"rust",
+			"ron",
 		},
 		incremental_selection = {
 			enable = true,

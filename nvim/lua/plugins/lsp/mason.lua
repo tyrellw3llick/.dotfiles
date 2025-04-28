@@ -35,6 +35,8 @@ return {
 				"pyright",
 				-- Go
 				"gopls",
+				-- Rust
+				"rust_analyzer",
 				-- Miscellaneous
 				"marksman",
 				"dockerls",
@@ -59,6 +61,8 @@ return {
 				"black",
 				-- Lua
 				"stylua",
+				--Rust
+				"codelldb",
 				-- Miscellaneous
 				"markdownlint-cli2",
 				"markdown-toc",
