@@ -47,7 +47,7 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "i", "s", "n" }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "copilot" },
