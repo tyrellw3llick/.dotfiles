@@ -10,8 +10,7 @@ return {
 			javascriptreact = { "biome" },
 			typescriptreact = { "biome" },
 			css = { "biome" },
-			json = { "biome" },
-			python = { "pylint" },
+			json = { "biome", "jsonlint" },
 			markdown = { "markdownlint-cli2" },
 			dockerfile = { "hadolint" },
 		}

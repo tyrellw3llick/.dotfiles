@@ -1,7 +1,7 @@
 theme = GruvboxDark
 
 font-family = CaskaydiaCove Nerd Font Mono
-font-size = 23
+font-size = 21
 window-width = 100
 window-height = 100
 cursor-style = block

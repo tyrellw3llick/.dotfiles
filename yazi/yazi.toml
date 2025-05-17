@@ -1,5 +1,5 @@
 [manager]
-ratio=[2, 4, 4]
+ratio=[2, 3, 6]
 sort_dir_first=true
 show_symlink=true
 
