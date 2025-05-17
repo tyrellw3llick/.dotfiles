@@ -1,4 +1,3 @@
--- lua/plugins/lsp/lspconfig.lua
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
@@ -6,11 +5,12 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 		{ "folke/neodev.nvim", opts = {} },
-		"mason-org/mason-lspconfig.nvim", -- Important dependency
+		"mason-org/mason-lspconfig.nvim",
 	},
 	opts = {
-		-- Define server configurations here
-		-- Keys are server names, values are tables passed to lspconfig.<server_name>.setup()
+		capabilities = function()
+			return require("cmp_nvim_lsp").default_capabilities()
+		end,
 		servers = {
 			gopls = {
 				settings = {
@@ -70,38 +70,18 @@ return {
 							enable = true,
 							url = "https://www.schemastore.org/api/json/catalog.json",
 						},
-						-- Add other yamlls specific settings if needed
-						-- customTags = {
-						--  "!Ref",
-						--  "!Sub",
-						-- },
 					},
 				},
 			},
-			astro = {
-				-- Astro LS might not have many 'settings', but you can ensure it's set up.
-				-- settings = { astro = {} } -- if needed
-			},
-			ts_ls = { -- Assuming 'ts_ls' is an alias for typescript-language-server or similar
-				-- Add settings for typescript-language-server if you have them
-				-- Example:
-				-- settings = {
-				--  typescript = { ... },
-				--  javascript = { ... },
-				-- }
-			},
-			html = {}, -- Gets default capabilities and your global on_attach
+			astro = {},
+			ts_ls = {},
+			html = {},
 			cssls = {},
 			tailwindcss = {},
 			emmet_ls = {},
 			prismals = {},
 			pyright = {},
-			rust_analyzer = {
-				-- rust-analyzer often has its own plugin (like rustaceanvim which you have)
-				-- or specific settings. If rustaceanvim handles its setup, you might not need
-				-- an entry here, or just a minimal one if you want to ensure default capabilities.
-				-- For now, assuming rustaceanvim handles most of it.
-			},
+			rust_analyzer = {},
 			marksman = {},
 			dockerls = {},
 			docker_compose_language_service = {},
@@ -115,7 +95,6 @@ return {
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		-- Global diagnostic config
 		vim.diagnostic.config({
 			virtual_text = {
 				enable = true,

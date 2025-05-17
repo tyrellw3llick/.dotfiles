@@ -1,13 +1,11 @@
--- lua/plugins/lsp/mason.lua
 return {
 	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim", -- Still useful for ensure_installed integration
+		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
 		local mason = require("mason")
-		local mason_lspconfig = require("mason-lspconfig")
 		local mason_tool_installer = require("mason-tool-installer")
 
 		mason.setup({
@@ -18,11 +16,6 @@ return {
 					package_uninstalled = "✗",
 				},
 			},
-		})
-
-		-- mason-lspconfig now mainly ensures servers are installed.
-		-- The actual lspconfig.<server>.setup() calls are managed by your lspconfig.lua
-		mason_lspconfig.setup({
 			ensure_installed = {
 				"astro",
 				"ts_ls",
@@ -40,7 +33,6 @@ return {
 				"docker_compose_language_service",
 				"yamlls",
 			},
-			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
