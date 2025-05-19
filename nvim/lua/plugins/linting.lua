@@ -5,12 +5,7 @@ return {
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
-			javascript = { "biome" },
-			typescript = { "biome" },
-			javascriptreact = { "biome" },
-			typescriptreact = { "biome" },
-			css = { "biome" },
-			json = { "biome", "jsonlint" },
+			json = { "jsonlint" },
 			markdown = { "markdownlint-cli2" },
 			dockerfile = { "hadolint" },
 		}

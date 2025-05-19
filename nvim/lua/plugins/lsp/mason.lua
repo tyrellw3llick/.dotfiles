@@ -1,7 +1,7 @@
 return {
 	"mason-org/mason.nvim",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
@@ -19,6 +19,7 @@ return {
 			ensure_installed = {
 				"astro",
 				"ts_ls",
+				"biome",
 				"html",
 				"cssls",
 				"tailwindcss",
@@ -44,7 +45,6 @@ return {
 				"delve",
 				"biome",
 				"jsonlint",
-				"prettier",
 				"black",
 				"stylua",
 				"codelldb",

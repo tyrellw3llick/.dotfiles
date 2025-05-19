@@ -75,6 +75,7 @@ return {
 			},
 			astro = {},
 			ts_ls = {},
+			biome = {},
 			html = {},
 			cssls = {},
 			tailwindcss = {},
@@ -93,7 +94,7 @@ return {
 	config = function(_, opts)
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-		local capabilities = cmp_nvim_lsp.default_capabilities()
+		local capabilities = opts.capabilities()
 
 		vim.diagnostic.config({
 			virtual_text = {
