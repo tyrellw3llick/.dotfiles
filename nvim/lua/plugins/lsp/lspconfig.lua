@@ -119,6 +119,9 @@ return {
 			-- print("LspAttach global: Client " .. client.name .. " attached to buffer " .. bufnr) -- For debugging
 			local map_opts = { buffer = bufnr, silent = true }
 
+			-- Enable inlay_hint by default
+			vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
 			map_opts.desc = "Show LSP references"
 			vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", map_opts)
 			map_opts.desc = "Go to declaration"
