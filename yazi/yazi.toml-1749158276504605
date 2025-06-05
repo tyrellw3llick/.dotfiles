@@ -1,4 +1,4 @@
-[mgr]
+[manager]
 ratio=[2, 3, 6]
 sort_dir_first=true
 show_symlink=true
