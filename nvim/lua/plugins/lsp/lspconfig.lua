@@ -74,7 +74,43 @@ return {
 				},
 			},
 			astro = {},
-			ts_ls = {},
+			vtsls = {
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+				},
+				settings = {
+					complete_function_calls = true,
+					vtsls = {
+						enableMoveToFileCodeAction = true,
+						autoUseWorkspaceTsdk = true,
+						experimental = {
+							maxInlayHintLength = 30,
+							completion = {
+								enableServerSideFuzzyMatch = true,
+							},
+						},
+					},
+					typescript = {
+						updateImportsOnFileMove = { enabled = "always" },
+						suggest = {
+							completeFunctionCalls = true,
+						},
+						inlayHints = {
+							enumMemberValues = { enabled = true },
+							functionLikeReturnTypes = { enabled = true },
+							parameterNames = { enabled = "literals" },
+							parameterTypes = { enabled = true },
+							propertyDeclarationTypes = { enabled = true },
+							variableTypes = { enabled = false },
+						},
+					},
+				},
+			},
 			biome = {},
 			html = {},
 			cssls = {},
@@ -87,6 +123,7 @@ return {
 			marksman = {},
 			dockerls = {},
 			docker_compose_language_service = {},
+			nil_ls = {},
 			-- Add other servers from your ensure_installed list in mason.lua if they need
 			-- specific `settings` or other direct lspconfig options.
 			-- If they only need capabilities and global on_attach, they don't strictly need an entry here.

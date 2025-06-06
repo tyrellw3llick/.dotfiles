@@ -19,6 +19,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				go = { "goimports", "gofumpt" },
+				nix = { "nixfmt" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

@@ -18,7 +18,7 @@ return {
 			},
 			ensure_installed = {
 				"astro",
-				"ts_ls",
+				"vtsls",
 				"biome",
 				"html",
 				"cssls",
@@ -33,6 +33,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"yamlls",
+				"nil",
 			},
 		})
 

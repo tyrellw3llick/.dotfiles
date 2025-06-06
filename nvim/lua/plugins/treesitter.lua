@@ -42,6 +42,7 @@ return {
 			"rust",
 			"ron",
 			"sql",
+			"nix",
 		},
 		incremental_selection = {
 			enable = true,
