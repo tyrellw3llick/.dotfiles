@@ -33,7 +33,7 @@ return {
 				"dockerls",
 				"docker_compose_language_service",
 				"yamlls",
-				"nil",
+				"nil_ls",
 			},
 		})
 
